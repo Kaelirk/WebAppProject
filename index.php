@@ -17,7 +17,7 @@ $connect = mysqli_connect("db","lamp_docker","password","lamp_docker");
 $query = 'select * from test_table';
 $result = mysqli_query($connect, $query);
 
-echo '<h1>MySQL Content</h1>';
+echo '<h1>Temporary table</h1>';
 
 while($record = mysqli_fetch_assoc($result)){
     echo '<h2>'.$record['id'].'</h2>';
