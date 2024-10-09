@@ -26,3 +26,6 @@ while($record = mysqli_fetch_assoc($result)){
     echo 'Posted:' .$record['date'];
     echo '<hr>';
 }
+
+echo 'does this update live?';
+
