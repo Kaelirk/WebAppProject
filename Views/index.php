@@ -27,8 +27,8 @@
     // $usersObj2= new UsersCtrl();
     // $usersObj2->createUser('Stevie', 'Wonder', '2026-09-06');
 
-    // $userObj3= new UsersView();
-    // $userObj3->showUsers();
+    $userObj3= new UsersView();
+    $userObj3->showUsers();
 
   ?>
 </body>
