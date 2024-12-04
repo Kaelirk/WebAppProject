@@ -21,8 +21,14 @@
 </head>
 <body>  
   <?php
-    $testObj= new Test();
-    $testObj->getUsers();
+    // $usersObj= new UsersView();
+    // $usersObj->showUser('John');
+
+    // $usersObj2= new UsersCtrl();
+    // $usersObj2->createUser('Stevie', 'Wonder', '2026-09-06');
+
+    // $userObj3= new UsersView();
+    // $userObj3->showUsers();
 
   ?>
 </body>
