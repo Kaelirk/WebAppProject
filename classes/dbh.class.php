@@ -6,6 +6,7 @@ class Dbh {
     private $pwd = "password";
     private $dbname = "lamp_docker";
 
+
     protected function connect(){
         $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname;
         $pdo = new PDO($dsn, $this->user, $this->pwd);
