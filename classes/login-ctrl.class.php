@@ -7,18 +7,18 @@ class LoginCtrl extends Login{
     private $pwd;
 
 //the code below constructs an object from the data provided by the user when the class is called upon. (the $this-$uid = $uid code is there to assign the data provided by the user to the private properties above)
-    public function __construct($uid, $pwd, $pwdrepeat, $email) {
+    public function __construct($uid, $pwd) {
 
         $this->uid = $uid;
         $this->pwd = $pwd;
 
     }
-//the signupUser function first checks if any of the verification functions below have returned false - if so it exits the sign  up process.
+//the loginUser function first checks if any of the verification functions below have returned false - if so it exits the sign  up process.
 //If none of the checks return false, the function then creates the user in the database.
     public function loginUser(){
         if($this->emptyInput() == false){
             // echo "Empty input!";
-            header("location: ../Views/index.php?error=emptyinput");
+            header("Location: ../Views/index.php?error=emptyinput");
             exit();
         }
 

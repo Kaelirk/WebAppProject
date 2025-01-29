@@ -9,10 +9,11 @@ if(isset($_POST["submit"])){
     include "../classes/dbh.class.php";
     include "../classes/login.class.php";
     include "../classes/login-ctrl.class.php";
-    $signup = new SignupCtrl($uid, $pwd, $pwdrepeat, $email); //this code creates an object using the included files above and the data provided by the users.
+    $login = new LoginCtrl($uid, $pwd); //this code creates an object using the included files above and the data provided by the users.
+
     // Running error handlers and user signup
-    $signup->signupUser();
+    $login->loginUser();
 
     // Going back to front page
-    header("location ../Views/index.php?error=none");
+    header("Location: ../Views/index.php?error=none");
 }

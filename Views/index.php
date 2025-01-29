@@ -1,5 +1,6 @@
 <?php
-  include '../includes/class-autoload.inc.php';
+  //include '../includes/class-autoload.inc.php';
+  session_start();
   ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,11 +14,32 @@
   <div class="container-fluid">
   <a class="navbar-brand" href="#">
       <img src="/images/dogtena.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-      DogTena
+      PhysioLink
     </a>
   </div>
+  <ul class="main-menu">
+    <li><a href="index.php">Home</a></li>
+    <li><a href="#">Healthcare Providers</a></li>
+    <li><a href="#">My appointments</a></li>
+    <li><a href="#">Invoices & Payments</a></li>
+  </ul>
+  <ul class="navbar-membermenu">
+    <?php
+      if(isset($_SESSION["userid"])){
+    ?>
+    <li><a href="#"><?php echo $_SESSION["useruid"];?></a></li>
+    <li><a href="../includes/logout.inc.php" class="header-login-a">LOGOUT</a></li>
+    <?php
+      }else{
+    ?>
+    <li><a href="#">SIGN UP</a></li>
+    <li><a href="#" class="header-login-a">LOGIN</a></li>
+    <?php
+    }
+    ?>
+  </ul>
 </nav>
-  <title>Dogtena</title>
+  <title>PhysioLink</title>
 </head>
 <body>  
 

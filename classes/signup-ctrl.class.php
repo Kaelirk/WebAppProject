@@ -20,27 +20,27 @@ class SignupCtrl extends Signup{
     public function signupUser(){
         if($this->emptyInput() == false){
             // echo "Empty input!";
-            header("location: ../Views/index.php?error=emptyinput");
+            header("Location: ../Views/index.php?error=emptyinput");
             exit();
         }
         if($this->invalidUid() == false){
             // echo "Username is invalid!";
-            header("location: ../Views/index.php?error=invalidusername");
+            header("Location: ../Views/index.php?error=invalidusername");
             exit();
         }
         if($this->invalidEmail() == false){
             // echo "Email address is invalid!";
-            header("location: ../Views/index.php?error=invalidemail");
+            header("Location: ../Views/index.php?error=invalidemail");
             exit();
         }
         if($this->pwdMatch() == false){
             // echo "Password does not match!";
-            header("location: ../Views/index.php?error=passwordsdonotmatch");
+            header("Location: ../Views/index.php?error=passwordsdonotmatch");
             exit();
         }
         if($this->userExists() == false){
             // echo "User already exists!";
-            header("location: ../Views/index.php?error=useralreadyexists");
+            header("Location: ../Views/index.php?error=useralreadyexists");
             exit();
         }
 
