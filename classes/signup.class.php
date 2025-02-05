@@ -9,7 +9,7 @@ class Signup extends Dbh {
 
         if(!$stmt->execute(array($uid, $hashedPwd, $email))){
             $stmt = null;
-            header("Location: ../views/index.php?error=stmtfailed");
+            header("Location: ../index.php?error=stmtfailed");
             exit();
         }
 
@@ -21,7 +21,7 @@ class Signup extends Dbh {
 
         if(!$stmt->execute(array($uid, $email))){
             $stmt = null;
-            header("Location: ../views/index.php?error=stmtfailed");
+            header("Location: ../index.php?error=stmtfailed");
             exit();
         }
 
@@ -34,5 +34,32 @@ class Signup extends Dbh {
         }
 
         return $resultCheck;
+    }
+
+    protected function getUserId($uid) {
+        $stmt = $this->connect()->prepare('SELECT users_id FROM users WHERE users_uid = ?;');
+        
+        if(!$stmt->execute(array($uid))) {
+            $stmt = null;
+            header("Location: ../profile.php?error=stmtfailed");
+            exit();
+        }
+
+        $profileData = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if(count($profileData) == 0) {
+            $stmt = null;
+            header("Location: profile.php?error=profilenotfound");
+            exit();
+        }
+        return $profileData;
+        // if($stmt->rowCount() == 0) {
+        //     $stmt = null;
+        //     header("Location: ../profile.php?error=profilenotfound");
+        //     exit();
+        // }
+
+        // $profileData = $stmt->fetchAll();
+
+        // return $profileData;
     }
 }

@@ -18,7 +18,7 @@ class LoginCtrl extends Login{
     public function loginUser(){
         if($this->emptyInput() == false){
             // echo "Empty input!";
-            header("Location: ../Views/index.php?error=emptyinput");
+            header("Location: ../index.php?error=emptyinput");
             exit();
         }
 

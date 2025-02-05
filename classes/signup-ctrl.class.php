@@ -20,27 +20,27 @@ class SignupCtrl extends Signup{
     public function signupUser(){
         if($this->emptyInput() == false){
             // echo "Empty input!";
-            header("Location: ../Views/index.php?error=emptyinput");
+            header("Location: ../index.php?error=emptyinput");
             exit();
         }
         if($this->invalidUid() == false){
             // echo "Username is invalid!";
-            header("Location: ../Views/index.php?error=invalidusername");
+            header("Location: ../index.php?error=invalidusername");
             exit();
         }
         if($this->invalidEmail() == false){
             // echo "Email address is invalid!";
-            header("Location: ../Views/index.php?error=invalidemail");
+            header("Location: ../index.php?error=invalidemail");
             exit();
         }
         if($this->pwdMatch() == false){
             // echo "Password does not match!";
-            header("Location: ../Views/index.php?error=passwordsdonotmatch");
+            header("Location: ../index.php?error=passwordsdonotmatch");
             exit();
         }
         if($this->userExists() == false){
             // echo "User already exists!";
-            header("Location: ../Views/index.php?error=useralreadyexists");
+            header("Location: ../index.php?error=useralreadyexists");
             exit();
         }
 
@@ -107,6 +107,11 @@ class SignupCtrl extends Signup{
             $result = true;
         }
         return $result;
+    }
+
+    public function fetchUserId($uid) {
+        $userId = $this->getUserId($uid);
+        return $userId[0]['users_id'];
     }
 
 }

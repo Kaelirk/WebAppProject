@@ -7,13 +7,13 @@ class Login extends Dbh {
 
         if(!$stmt->execute(array($uid, $pwd))){
             $stmt = null;
-            header("Location: ../views/index.php?error=stmtfailed");
+            header("Location: ../index.php?error=stmtfailed");
             exit();
         }
 
         if($stmt->rowCount() == 0){
             $stmt = null;
-            header("Location: ../views/index.php?error=usernotfound");
+            header("Location: ../index.php?error=usernotfound");
             exit();
         }
 
@@ -22,20 +22,20 @@ class Login extends Dbh {
 
         if($checkPwd == false){
             $stmt = null;
-            header("Location: ../views/index.php?error=wrongpassword");
+            header("Location: ../index.php?error=wrongpassword");
             exit();
         }elseif($checkPwd == true){
             $stmt = $this->connect()->prepare('SELECT * FROM users WHERE users_uid = ? OR users_email = ? AND users_pwd = ?;');
 
             if(!$stmt->execute(array($uid, $uid, $pwd))){
                 $stmt = null;
-                header("Location: ../views/index.php?error=stmtfailed");
+                header("Location: ../index.php?error=stmtfailed");
                 exit();
             }
 
             if($stmt->rowCount() == 0){
                 $stmt = null;
-                header("Location: ../views/index.php?error=usernotfound");
+                header("Location: ../index.php?error=usernotfound");
                 exit();
             }
 

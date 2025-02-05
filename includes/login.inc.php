@@ -1,9 +1,9 @@
 <?php
 //check if a user has pressed a submit button and assigns the submitted values to properties
-if(isset($_POST["submit"])){
+if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-    $uid = $_POST["uid"];
-    $pwd = $_POST["pwd"];
+    $uid = htmlspecialchars($_POST['uid'], ENT_QUOTES, 'UTF-8');
+    $pwd = htmlspecialchars($_POST['pwd'], ENT_QUOTES, 'UTF-8');
 
     // Creates a signupCtrl object
     include "../classes/dbh.class.php";
@@ -15,5 +15,5 @@ if(isset($_POST["submit"])){
     $login->loginUser();
 
     // Going back to front page
-    header("Location: ../Views/index.php?error=none");
+    header("Location: ../profile.php?error=none");
 }
