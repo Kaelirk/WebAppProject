@@ -45,8 +45,6 @@
               $profileInfo->fetchIntroText($_SESSION["userid"]);
               ?>
             </p>
-            <br><br>
-            Nulla congue imperdiet risus, etc etc etc...
           </div>
         </div>
         <div class="profile-posts bg-info-subtle d-inline-flex p-3 col rounded-5">
