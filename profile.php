@@ -3,7 +3,6 @@
 
   include "classes/dbh.class.php";
   include "classes/profileinfo.class.php";
-  include "classes/profileinfo-ctrl.class.php";
   include "classes/profileinfo-view.class.php";
 
   $profileInfo = new ProfileInfoView();
