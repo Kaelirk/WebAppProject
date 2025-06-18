@@ -1,6 +1,6 @@
 <?php
 
-//creating a SignupCtrl class that can be included into other files to be instantiated. This class has properties provided by the user.
+//creating a loginCtrl class that can be included into other files to be instantiated. This class has properties provided by the user.
 class LoginCtrl extends Login{
 
     private $uid;
@@ -13,8 +13,8 @@ class LoginCtrl extends Login{
         $this->pwd = $pwd;
 
     }
-//the loginUser function first checks if any of the verification functions below have returned false - if so it exits the sign  up process.
-//If none of the checks return false, the function then creates the user in the database.
+//the loginUser function first checks if the verification function below has returned false - if so it exits the login process.
+//If the check returns false, the function then runs the getUser() function from the Login class.
     public function loginUser(){
         if($this->emptyInput() == false){
             // echo "Empty input!";

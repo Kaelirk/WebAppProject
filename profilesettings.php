@@ -7,6 +7,7 @@
 
   $profileInfo = new ProfileInfoView();
   ?>
+<!-- This page contains the html and bootstrap layout/design for the profilesettings page of the application -->
 <body class="bg-secondary-subtle">
  <section class="profile" >
     <div class="wrapper d-flex justify-content-center" >

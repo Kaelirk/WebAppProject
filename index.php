@@ -1,7 +1,7 @@
 <?php
   include_once "header.php";
   ?>
-
+<!-- this page contains the HTML and Boostrap layout/design for the index page. It includes the header.php file via the include_once expression-->
 <body>  
 <section class="index-login">
   <div class="wrapper">

@@ -1,18 +1,21 @@
 <?php
   session_start();
   ?>
+<!-- This page contains the HTML and bootstrap design/layout for the header. This file is separate from the index.php file as it allows
+ for the header to be included on any page that requires it without needing to have the same code written out multiple times. 
+ The header includes a horizontal navbar list across the top of the page along with login/signup or useruid/logout buttons-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
+<!-- Bootstrap was chosen as it provides easy to use style classes that can be integrated straight into the HTML -->
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <div class="container-fluid">
     <div class="navbar-header">
       <img src="/images/dogtena.png" alt="Logo" width="50" height="48">
-      <a class="navbar-brand" href="#">PhysioLink</a>
+      <a class="navbar-brand" href="#">AgendaCare</a>
     </div>
     <div class="navbar-header">
       <ul class="navbar-nav">
@@ -23,11 +26,12 @@
       </ul>
     </div>
     <div class="navbar-header">
-      <ul class="nav flex-column">
+      <ul class="nav flex-column"> 
+        <!-- The code below checks if session is active, in which case it will load the useruid and a logout button. Otherwise it loads login/signup buttons -->
         <?php
           if(isset($_SESSION["userid"])){
         ?>
-        <li class="nav-item"><a href="profile.php"><img src="images/person-lines-fill.svg" alt="Bootstrap" width="24" height="24"><?php echo $_SESSION["useruid"];?></a></li>
+        <li class="nav-item"><a href="profile.php"><img src="images/person-lines-fill.svg" alt="Bootstrap" width="24" height="24"><?php echo $_SESSION["useruid"];?></a></li> 
         <li class="nav-item"><a href="includes/logout.inc.php" class="header-login-a"><button type="button" class="btn btn-primary btn-sm">LOGOUT</button></a></li>
         <?php
           }else{

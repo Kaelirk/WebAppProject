@@ -11,7 +11,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     include "../classes/login-ctrl.class.php";
     $login = new LoginCtrl($uid, $pwd); //this code creates an object using the included files above and the data provided by the users.
 
-    // Running error handlers and user signup
+    // Running error handlers and user login
     $login->loginUser();
 
     // Going back to front page

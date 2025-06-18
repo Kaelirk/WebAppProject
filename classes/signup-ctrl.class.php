@@ -43,10 +43,11 @@ class SignupCtrl extends Signup{
             header("Location: ../index.php?error=useralreadyexists");
             exit();
         }
-
+        //after running all the checks, the setUser() class from the sign.class file is used to insert the user into the database.
         $this->setUser($this->uid, $this->pwd, $this->email);
     }
-
+/*The error handlers below aren't part of the signupUser() function because there is a chance the code might need to be reused again. 
+This prevents us from writting the same code several times.*/
 //the code below is designed to check if there are empty inputs from the user.
     private function emptyInput() {
         $result = false;
@@ -96,7 +97,6 @@ class SignupCtrl extends Signup{
     }
 
 //the code below checks of the user already exists in the database.
-    //private function
 
     private function userExists(){
         $result = false;
@@ -108,7 +108,7 @@ class SignupCtrl extends Signup{
         }
         return $result;
     }
-
+//the code below fetches the current user's UserId from the database and returns it.
     public function fetchUserId($uid) {
         $userId = $this->getUserId($uid);
         return $userId[0]['users_id'];
