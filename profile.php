@@ -37,11 +37,11 @@
       </div>
         <div class="profile-content bg-info-subtle d-inline-flex p-3 col rounded-5">
           <div class="profile-intro">
-            <h3> <!-- The code below uses the fetchAbout function set in the profileinfo-view.class file to return the user's Introtile data from the database -->
+            <h3> <!-- The code below uses the fetchIntroTitle function set in the profileinfo-view.class file to return the user's Introtile data from the database -->
               <?php 
               $profileInfo->fetchIntroTitle($_SESSION["userid"]);
               ?>
-            </h3> <!-- The code below uses the fetchAbout function set in the profileinfo-view.class file to return the user's Introtext data from the database -->
+            </h3> <!-- The code below uses the fetchIntroText function set in the profileinfo-view.class file to return the user's Introtext data from the database -->
             <p>
               <?php 
               $profileInfo->fetchIntroText($_SESSION["userid"]);

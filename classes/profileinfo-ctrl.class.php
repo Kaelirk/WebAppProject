@@ -18,13 +18,13 @@ class ProfileInfoCtrl extends ProfileInfo {
     }
 
     public function updateProfileInfo($about, $introTitle, $introText){
-        //error handlers
+        //runs the private emptyInputCheck() method from the ProfileInfoCtrl class
         if ($this->emptyInputCheck($about, $introTitle, $introText) == true){
             header("Location: ../profilesettings.php?error=emptyinput");
             exit();
         }
 
-        //if we get to this stage, profile info will be update.
+        //if we get to this stage, take the data submitted by the user submitted via the profile.info.inc page and run the setNewProfileInfo() method from profileinto.class (which is a model class of the MVC model)
         $this->setNewProfileInfo($about, $introTitle, $introText, $this->userId);
     }
 
