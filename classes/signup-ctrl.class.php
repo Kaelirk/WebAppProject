@@ -108,7 +108,7 @@ This prevents us from writting the same code several times.*/
         }
         return $result;
     }
-//the code below fetches the current user's UserId from the database and returns it.
+//the code below fetches the current user's users_id from the database and returns it.
     public function fetchUserId($uid) {
         $userId = $this->getUserId($uid);
         return $userId[0]['users_id'];

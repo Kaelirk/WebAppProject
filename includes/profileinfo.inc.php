@@ -6,11 +6,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     //$id and $uid are determine by the active session user
     $id = $_SESSION["userid"];
     $uid = $_SESSION["useruid"];
-    //introTile, introText and about are filled by the data posted by the user via the update form.
+    //$introTile, $introText and $about are filled by the data posted by the user via the update form.
     $introTitle = htmlspecialchars($_POST['introtitle'], ENT_QUOTES, 'UTF-8');
     $introText = htmlspecialchars($_POST['introtext'], ENT_QUOTES, 'UTF-8');
     $about = htmlspecialchars($_POST['about'], ENT_QUOTES, 'UTF-8');
-
+    
     include "../classes/dbh.class.php";
     include "../classes/profileinfo.class.php";
     include "../classes/profileinfo-ctrl.class.php";
