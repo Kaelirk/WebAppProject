@@ -5,7 +5,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $uid = htmlspecialchars($_POST['uid'], ENT_QUOTES, 'UTF-8');
     $pwd = htmlspecialchars($_POST['pwd'], ENT_QUOTES, 'UTF-8');
 
-    // Creates a signupCtrl object
+    // Creates a LoginCtrl object
     include "../classes/dbh.class.php";
     include "../classes/login.class.php";
     include "../classes/login-ctrl.class.php";

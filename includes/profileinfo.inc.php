@@ -1,5 +1,6 @@
 <?php
-//start/continue a session to make sure we have access to the session variables (userid and useruid)
+/*start/continue a session to make sure we have access to the session variables (userid and useruid) -- as this page of code does not include the header.php file
+the session must be started/continued on this page to access the global variables*/
 session_start();
 //Check if we access this page by submitting the update form.
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -16,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     include "../classes/profileinfo-ctrl.class.php";
     $profileInfo = new ProfileInfoCtrl($id, $uid);//setting $profileInfo as a new ProfileInfoCtrl object
 
-    $profileInfo->updateProfileInfo($about, $introTitle, $introText); //The new object runs the updateProfileInfo() method.
+    $profileInfo->updateProfileInfo($about, $introTitle, $introText); //The new object passes data through the updateProfileInfo() method.
 
     header("Location: ../profile.php?error=none");
 }

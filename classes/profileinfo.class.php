@@ -16,9 +16,9 @@ class ProfileInfo extends dbh {
             header("Location: ../profile.php?error=profilenotfound");
             exit();
         }
-
-        $profileData = $stmt->fetchAll();
-
+        //fetching all the data selected by the SQL statement and placing it in a variable.
+        $profileData = $stmt->fetchAll();//if the PDO wasn't set to FETCH-ASSOC, it would need to be included here. But it is already included in the dbh file
+        //returning all the data retrieve by the fetchAll() method
         return $profileData;
     }
     //The setNewProfileInfo function connets to the database and updates the about, into and intotext columns associated to the user's users_id in the profiles table

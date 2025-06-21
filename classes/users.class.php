@@ -7,7 +7,7 @@ class Users extends Dbh {
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$name]);
 
-        $results = $stmt->fetchAll();
+        $results = $stmt->fetchAll();//if the PDO wasn't set to FETCH-ASSOC, it would need to be included here. But it is already included in the dbh file
         return $results;
         
     }
@@ -15,7 +15,7 @@ class Users extends Dbh {
     protected function getUsers() {
         $sql = "SELECT * FROM test_table";
         $stmt = $this->connect()->query($sql);
-        $results = $stmt->fetchAll();
+        $results = $stmt->fetchAll();//if the PDO wasn't set to FETCH-ASSOC, it would need to be included here. But it is already included in the dbh file
         return $results;
         
     }

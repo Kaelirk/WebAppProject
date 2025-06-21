@@ -1,4 +1,7 @@
 <?php
+  /*the session_start() method is used here to save variables as global variables accessible to all pages with the same active session.
+  As the header is included in every page users will have access to, the very first line of code will be the session_start() method, which will
+  maintain the same session across all pages.*/
   session_start();
   ?>
 <!-- This page contains the HTML and bootstrap design/layout for the header. This file is separate from the index.php file as it allows
@@ -22,12 +25,12 @@
         <li class="active nav-item"><a class="nav-link" href="index.php">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Healthcare Providers</a></li>
         <li class="nav-item"><a class="nav-link" href="#">My appointments</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Invoices & Payments</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Invoices & Payments</a></li> <!-- this link is decorative -->
       </ul>
     </div>
     <div class="navbar-header">
       <ul class="nav flex-column"> 
-        <!-- The code below checks if session is active, in which case it will load the useruid and a logout button. Otherwise it loads login/signup buttons -->
+        <!-- The code below checks if the session global variable called "userid" is set, in which case it will load the useruid and a logout button. Otherwise it loads login/signup buttons -->
         <?php
           if(isset($_SESSION["userid"])){
         ?>
