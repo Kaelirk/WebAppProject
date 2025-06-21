@@ -1,7 +1,7 @@
 <?php
 
 class Users extends Dbh {
-
+    //return all data related to the user from the tast_table database
     protected function getUser($name) {
         $sql = "SELECT * FROM test_table WHERE name = ?";
         $stmt = $this->connect()->prepare($sql);
@@ -11,7 +11,7 @@ class Users extends Dbh {
         return $results;
         
     }
-
+    //return all data from the test_table database
     protected function getUsers() {
         $sql = "SELECT * FROM test_table";
         $stmt = $this->connect()->query($sql);
@@ -19,7 +19,7 @@ class Users extends Dbh {
         return $results;
         
     }
-
+    //insert a new row for a new user into the test_table database.
     protected function setUser($name, $second_name, $date) {
         $sql = "INSERT INTO test_table(name, second_name, date) VALUES (?, ?, ?)";
         $stmt = $this->connect()->prepare($sql);

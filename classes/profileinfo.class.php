@@ -33,7 +33,7 @@ class ProfileInfo extends dbh {
 
         $stmt = null;
     }
-
+    //the setProfileInfo method() is only used to set the initial data of a user's profileInfo. It's uses the Insert into command to create a new row in the database
     protected function setProfileInfo($profileAbout, $profileTitle, $profileText, $userID) {
         $stmt = $this->connect()->prepare('INSERT INTO profiles (profiles_about, profiles_intro, profiles_introtext, users_id) VALUES (?, ?, ?, ?);');
         //check is statement exists/executes

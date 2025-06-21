@@ -1,7 +1,7 @@
 <?php
 
 class UsersView extends Users {
-
+    //method can be used to display the user's retrieved information
     public function showUser($name) {
         $results = $this->getUser($name);
             echo '<h2>'.$results[0]['id'].'</h2>';
@@ -10,7 +10,7 @@ class UsersView extends Users {
             echo 'Posted:'.$results[0]['date'];
             echo '<hr>';
     }
-
+    //method that can be used to display the information of all users
     public function showUsers() {
         $results = $this->getUsers();
         foreach($results as $user){
