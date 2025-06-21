@@ -22,9 +22,11 @@
     </div>
     <div class="navbar-header">
       <ul class="navbar-nav">
-        <li class="active nav-item"><a class="nav-link" href="index.php">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Healthcare Providers</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">My appointments</a></li>
+        <!-- the home button on the navbar loads the login page when no session is active and loads the profile page when a session is active -->
+        <li class="active nav-item"><a class="nav-link" <?php if(isset($_SESSION["userid"])){
+        ?>href="profile.php"<?php }else{?> href="index.php"<?php }?>>Home</a></li> 
+        <li class="nav-item"><a class="nav-link" href="availabilities.php">Availabilities</a></li>
+        <li class="nav-item"><a class="nav-link" href="patientapptlist.php">My appointments</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Invoices & Payments</a></li> <!-- this link is decorative -->
       </ul>
     </div>
@@ -37,12 +39,7 @@
         <li class="nav-item"><a href="profile.php"><img src="images/person-lines-fill.svg" alt="Bootstrap" width="24" height="24"><?php echo $_SESSION["useruid"];?></a></li> 
         <li class="nav-item"><a href="includes/logout.inc.php" class="header-login-a"><button type="button" class="btn btn-primary btn-sm">LOGOUT</button></a></li>
         <?php
-          }else{
-        ?>
-        <li class="nav-item"><a href="#"><span class="glyphicon glyphicon-user"></span>SIGN UP</a></li>
-        <li class="nav-item"><a href="#" class="header-login-a"><span class="glyphicon glyphicon-Login"></span>LOGIN</a></li>
-        <?php
-        }
+          }
         ?>
       </ul>
     </div> 

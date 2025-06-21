@@ -7,13 +7,15 @@ class SignupCtrl extends Signup{
     private $pwd;
     private $pwdrepeat;
     private $email;
+    private $pro;
 //the code below constructs an object from the data provided by the user when the class is called upon. (the $this-$uid = $uid code is there to assign the data provided by the user to the private properties above)
-    public function __construct($uid, $pwd, $pwdrepeat, $email) {
+    public function __construct($uid, $pwd, $pwdrepeat, $email, $pro) {
 
         $this->uid = $uid;
         $this->pwd = $pwd;
         $this->pwdrepeat = $pwdrepeat;
         $this->email = $email;
+        $this->pro = $pro;
     }
 //the signupUser function first checks if any of the verification functions below have returned false - if so it exits the sign  up process.
 //If none of the checks return false, the function then creates the user in the database.
@@ -44,7 +46,7 @@ class SignupCtrl extends Signup{
             exit();
         }
         //after running all the checks, the setUser() class from the sign.class file is used to insert the user into the database.
-        $this->setUser($this->uid, $this->pwd, $this->email);
+        $this->setUser($this->uid, $this->pwd, $this->email, $this->pro);
     }
 /*The error handlers below aren't part of the signupUser() function because there is a chance the code might need to be reused again. 
 This prevents us from writting the same code several times.*/

@@ -2,12 +2,12 @@
 
 class Signup extends Dbh {
     //
-    protected function setUser($uid, $pwd, $email) {
-        $stmt = $this->connect()->prepare('INSERT INTO users (users_uid, users_pwd, users_email) VALUES (?, ?, ?);');
+    protected function setUser($uid, $pwd, $email, $pro) {
+        $stmt = $this->connect()->prepare('INSERT INTO users (users_uid, users_pwd, users_email, users_pro) VALUES (?, ?, ?, ?);');
         //hashes the password for security before inserting the provided data into the database and creating a new user
         $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
         //check if the statement exists/executes
-        if(!$stmt->execute(array($uid, $hashedPwd, $email))){
+        if(!$stmt->execute(array($uid, $hashedPwd, $email, $pro))){
             $stmt = null;
             header("Location: ../index.php?error=stmtfailed");
             exit();
@@ -45,7 +45,7 @@ class Signup extends Dbh {
             exit();
         }
         //then checks if the user has any data in the profiles database and returns it when possible.
-        $profileData = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $profileData = $stmt->fetchAll();
         if(count($profileData) == 0) {
             $stmt = null;
             header("Location: profile.php?error=profilenotfound");
