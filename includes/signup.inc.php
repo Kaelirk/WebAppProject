@@ -9,7 +9,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $email = htmlspecialchars($_POST['email'], ENT_QUOTES, 'UTF-8');
     $pro = isset($_POST['pro']) ? 1: 0;
     
-
+ 
     include "../classes/dbh.class.php";
     include "../classes/signup.class.php";
     include "../classes/signup-ctrl.class.php";
