@@ -24,4 +24,3 @@ include "../classes/availabilities-ctrl.class.php";
     $newAppt = new AvailabilitiesCtrl($id, $name, $apptStart); //creating an availabilitiesCtrl object for the data to be run through the createAppt() method
     //running the object's createAppt() method to create the appointment in the database.
     $newAppt->createAppt();
-    header("Location: ../patientapptlist.php?error=none");

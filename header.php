@@ -17,7 +17,7 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <div class="container-fluid">
     <div class="navbar-header">
-      <img src="/images/dogtena.png" alt="Logo" width="50" height="48">
+      <img src="/images/hospital.png" alt="Logo" width="48" height="48">
       <a class="navbar-brand" href="#">AgendaCare</a>
     </div>
     <div class="navbar-header">
@@ -25,9 +25,16 @@
         <!-- the home button on the navbar loads the login page when no session is active and loads the profile page when a session is active -->
         <li class="active nav-item"><a class="nav-link" <?php if(isset($_SESSION["userid"])){
         ?>href="profile.php"<?php }else{?> href="index.php"<?php }?>>Home</a></li> 
+        <?php /*the PHP placed here is aimed at changing the navbar based on who is logged in. A patient will see availabilies, their appointments and invoices.
+        The administrator/physiotherapist will see their agenda.*/
+          if($_SESSION["userid"] != "1"){
+        ?>
         <li class="nav-item"><a class="nav-link" href="availabilities.php">Availabilities</a></li>
         <li class="nav-item"><a class="nav-link" href="patientapptlist.php">My appointments</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Invoices & Payments</a></li> <!-- this link is decorative -->
+        <?php }else{ ?>
+        <li class="nav-item"><a class="nav-link" href="physioagenda.php">My agenda</a></li>
+        <?php } ?>
+        <li class="nav-item"><a class="nav-link" href="Invoices.php">Invoices & Payments</a></li> <!-- this page is pretty much just here to populate the navbar -->
       </ul>
     </div>
     <div class="navbar-header">

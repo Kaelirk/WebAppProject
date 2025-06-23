@@ -64,16 +64,11 @@
         method: 'POST',
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({appt_start: slotStr})
+      }) //sent a JSON string containing the appt_start information to the book.inc file.
+      .then(() => {
+      //redirect the user to their appointement list
+      window.location.href = '../patientapptlist.php?error=none';
       })
-      .then(r => r.json())
-      .then(resp => {
-        if (resp.success) {
-          alert('Booked! Refreshing…');
-          window.location.reload();
-        } else {
-          alert('Error: ' + resp.error);
-        }
-      });
     }
   </script>
   

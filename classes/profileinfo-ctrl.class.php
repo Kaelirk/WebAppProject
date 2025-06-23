@@ -11,9 +11,9 @@ class ProfileInfoCtrl extends ProfileInfo {
     }
     //a method used when a new user is registered to auto-fill the profileinfo with default data.
     public function defaultProfileInfo(){
-        $profileAbout = "Tell people about yourself! What kind of physio are you?!";
-        $profileTitle = "Hi! I am " . $this->userUid;
-        $profileText = "Welcome to my physio profile page, take a good look!";
+        $profileAbout = "Phone: +352 --- --- --- Email: --- @ ------.com CNS number:";
+        $profileTitle = $this->userUid . "'s comments. " ;
+        $profileText = "Tell people about yourself! Who are you? Anything you think we should know?";
         $this->setProfileInfo($profileAbout, $profileTitle, $profileText, $this->userId);
     }
 

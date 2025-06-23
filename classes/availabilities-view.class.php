@@ -2,11 +2,7 @@
 
 class AvailabilitiesView extends Availabilities {
 
-    public function showTaken() {
-        $results = $this->getTaken();
-        foreach($results as $user){
-
-        }
-    }
+    /*this class used to contain methods in prior itirations of the application.
+    It now only exists for continuity purposes when making AvailabilitiesView() objects*/
 
 }
