@@ -2,10 +2,10 @@
 
 class Availabilities extends dbh {
     //the getAppts function simply connects to the database and returns all the information that is not associated to the admin's userId.
-    protected function getAppts($physioId) {
+    protected function getAppts() {
         $stmt = $this->connect()->prepare('SELECT * FROM appts WHERE users_id != 1;');
         //check is statement exists/executes
-        if(!$stmt->execute(array($physioId))) {
+        if(!$stmt->execute(array())) {
             $stmt = null;
             header("Location: ../profile.php?error=stmtfailed");
             exit();

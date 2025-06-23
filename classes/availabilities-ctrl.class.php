@@ -15,12 +15,10 @@ class AvailabilitiesCtrl extends Availabilities {
     public function createAppt(){
         //runs the emptyInputCheck() method from the AvailabilitiesCtrl class below.
         if ($this->emptyInputCheck() == true){
-            // echo "Empty input!";
             header("Location: ../availabilities.php?error=emptyinput");
             exit();
         }
         if($this->apptExists() == false){
-            // echo "Appointment already taken!";
             header("Location: ../availabilities.php?error=apptalreadytaken");
             exit();
         }

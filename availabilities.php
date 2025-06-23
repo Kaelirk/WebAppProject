@@ -20,14 +20,14 @@
   <div id="slots-container"></div>
 
   <script>
-    //running the taken.php API to return the taken slots from the database as an array of JSON string
-    fetch('./api/taken.php')
+    //running the taken.inc.php to return the taken slots from the database as an array of JSON string
+    fetch('./includes/taken.inc.php')
       .then(r => r.json()) //takes the returned data and parses it into a JS array of strings
       .then(takenSlots => { //takenSlots is now the array of strings
         const taken = new Set(takenSlots); //make the array into a set object (this is supposedly useful for doing quick checks by using the .has() method)
         const container = document.getElementById('slots-container'); //setting the container constant as a slots-container div to make buttons with.
 
-        // 2) Creating time slots.
+        //Creating time slots.
         const startHour = 8, endHour = 20; //start and end time for the day.
         for (let h = startHour; h < endHour; h++) {
           for (let m of [0, 30]) { //iterate through the hour creating a date() object for each half hour (so on 00 and on 30)
@@ -55,12 +55,12 @@
         }
       })
       .catch(console.error);//logs errors to the browser console.
-
-    // 4) booking handler
+    
+    //the code below books a slot in the agenda after clicking the confirmation pop-up that appears after clicking on an available slot.
     function bookSlot(slotStr) {
       if (!confirm(`Book the slot at ${slotStr}?`)) return;
-      // send to your booking endpoint via fetch or form POST
-      fetch('book.php', {
+      //send the booking request to the server and book if possible.
+      fetch('./includes/book.inc.php', {
         method: 'POST',
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({appt_start: slotStr})
