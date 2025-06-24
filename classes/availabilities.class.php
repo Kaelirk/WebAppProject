@@ -41,4 +41,6 @@ class Availabilities extends dbh {
         $results = $stmt->fetchAll();//if the PDO wasn't set to FETCH-ASSOC, it would need to be included here. But it is already included in the dbh file
         return $results;
     }
+
+    
 }

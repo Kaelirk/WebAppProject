@@ -4,31 +4,36 @@
   require_once __DIR__ . '/classes/dbh.class.php';
   ?>
 
-<style>
-    .slot { padding: 0.5em 1em; margin: 0.25em; border: 1px solid #888; border-radius: 4px; cursor: pointer; }
-    .taken { background: #f0f0f0; color: #999; cursor: not-allowed; }
+  <style>
+    .slot { padding: 0.5em 1em; margin: 0.25em; border: 2px solid #888; border-radius: 10px; cursor: not-allowed; width: 200px; text-align: center; white-space: nowrap;}
+    .taken { background:#20A0D8; color: #262626; cursor: pointer ; }
     .free:hover { background: #eef; }
   </style>
 
 <body class="bg-secondary-subtle">
-<section class="availabilities d-flex justify-content-center align-items-center min-vh-100">
-  <div class="availabilities-bg bg-secondary d-inline-flex p-3 rounded-5">
+<section class="bookings d-flex justify-content-center align-items-center min-vh-100">
+  <div class="bookings-bg bg-secondary d-inline-flex p-3 rounded-5">
     <div class="wrapper d-flex flex-column justify-content-center align-items-center">
-      <div class="availabilites-table"></div>
+  
 
   <h2>Your schedule for today: </h2>
   <div id="slots-container"></div>
 
   <script>
-    //running the taken.inc.php to return the taken slots from the database as an array of JSON string
-    fetch('./includes/taken.inc.php')
+    //running the bookings.inc.php api to return the bookings from the database as an array of JSON string
+    fetch('./includes/bookings.inc.php')
       .then(r => r.json()) //takes the returned data and parses it into a JS array of strings
-      .then(takenSlots => { //takenSlots is now the array of strings
-        const taken = new Set(takenSlots); //make the array into a set object (this is supposedly useful for doing quick checks by using the .has() method)
-        const container = document.getElementById('slots-container'); //setting the container constant as a slots-container div to make buttons with.
+      .then(bookings => { //bookings is now the array of strings
+        const bookingMap = new Map(); //make the array into a map object (this is supposedly useful for doing quick checks by using the .has() method)
 
-        //Creating time slots.
+        bookings.forEach(b => {
+          bookingMap.set(b.appt_start, b.name);
+        });
+
+        const container = document.getElementById('slots-container'); //setting the container constant as a slots-container div to make buttons with.
+        //Creating time slots, just like in the availabilities table.
         const startHour = 8, endHour = 20; //start and end time for the day.
+
         for (let h = startHour; h < endHour; h++) {
           for (let m of [0, 30]) { //iterate through the hour creating a date() object for each half hour (so on 00 and on 30)
            const dt = new Date(); //creates a new date() object
@@ -41,12 +46,15 @@
             const mi   = String(dt.getMinutes()).padStart(2,'0'); //creating a string that contains the minute's value in a form that fits the "YYYY-MM-DD HH:MM:SS".
             const slotStr = `${yyyy}-${mm}-${dd} ${hh}:${mi}:00`; //creating a string that is easily comparable to the javascript strings made when the taken.php api was run and returned the database data. we simply combine the strings above into 1 string.
 
-            // building the code for the buttons that allows user's to book slots.
+            // building the code for the buttons that allows admins to cancel slots.
             const btn = document.createElement('button');//creating an empty button "object" that can be configured.
-            btn.textContent = `${hh}:${mi}`;//the buttons display hours and minutes on them as labels.
-            btn.className = 'slot ' + (taken.has(slotStr) ? 'taken' : 'free');//Checks if there is a timeslot is already taken and assigns the CSS class slot taken to it. If the time slot is empty, it assign slot free to the button. this is so the button can look/act different based on availability.
-            if (!taken.has(slotStr)) {
-              btn.addEventListener('click', () => bookSlot(slotStr));//if the slot is free, the button is then assigned an EvenListener that listens for a user mouse click on the button.
+            const name = bookingMap.get(slotStr); //this assign the name of the person booked at the time of "slotStr" to the const name. This is done by retrieving the name mapped to the appt_start that is the same value as the slotStr.
+
+            btn.textContent = name ? `${hh}:${mi} - ${name}` : `${hh}:${mi}`;//the buttons display hours and minutes on them as labels and a name if there is a booking.
+            btn.className = 'slot ' + (name ? 'taken' : 'free');//Checks if there is a timeslot is already booked and assigns the CSS class slot taken to it. If the time slot is empty, it assign slot free to the button. this is so the button can look/act different based on availability.
+
+            if (name) {
+              btn.addEventListener('click', () => cancelBooking(slotStr, name));//if the slot is booked, the button is then assigned an EvenListener that listens for a user mouse click on the button and then runs the cancelBooking function.
             }
             container.appendChild(btn);//adds the button into the container defined earlier.
           }
@@ -56,18 +64,19 @@
       })
       .catch(console.error);//logs errors to the browser console.
     
-    //the code below books a slot in the agenda after clicking the confirmation pop-up that appears after clicking on an available slot.
-    function bookSlot(slotStr) {
-      if (!confirm(`Book the slot at ${slotStr}?`)) return;
-      //send the booking request to the server and book if possible.
-      fetch('./includes/book.inc.php', {
+    //the code below cancels a booking in the agenda after clicking the confirmation pop-up that appears after clicking on an booked slot.
+    function cancelBooking(slotStr, name) {
+      if (!confirm(`Cancel the booking at ${slotStr} for ${name}?`)) return;
+
+      //send the cancel request to the server and cancel if possible.
+      fetch('./includes/cancel.inc.php', {
         method: 'POST',
         headers: {'Content-Type':'application/json'},
-        body: JSON.stringify({appt_start: slotStr})
-      }) //sent a JSON string containing the appt_start information to the book.inc file.
+        body: JSON.stringify({appt_start: slotStr, name: name})
+      }) //sent a JSON string containing the appt_start information to the cancel.inc.php file.
       .then(() => {
       //redirect the user to their appointement list
-      window.location.href = '../patientapptlist.php?error=none';
+      window.location.reload();//reloads the page to hopefully show the change in the agenda.
       })
     }
   </script>

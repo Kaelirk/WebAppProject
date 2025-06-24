@@ -5,7 +5,7 @@
   ?>
 
  <style>
-    .slot { padding: 0.5em 1em; margin: 0.25em; border: 1px solid #888; border-radius: 4px; cursor: pointer; }
+    .slot { padding: 0.5em 1em; margin: 0.25em; border: 2px solid #888; border-radius: 10px; width: 200px; text-align: center; white-space: nowrap;cursor: pointer; }
     .taken { background: #f0f0f0; color: #999; cursor: not-allowed; }
     .free:hover { background: #eef; }
   </style>
