@@ -13,14 +13,11 @@ include "../classes/bookings.class.php";
 include "../classes/bookings-view.class.php";
 include "../classes/bookings-ctrl.class.php";
 
-    //$name is determine by the active session user
-    
-
-    //Retrieving the JSON data sent by the cancel button's _POST
+    //Retrieving the JSON data sent by the cancel button's _POST and then assigning the strings to variables.
     $rawApptData = json_decode(file_get_contents('php://input'), true);
     $apptStart = $rawApptData['appt_start'];
     $name = $rawApptData['name'];
 
     $cancellation = new bookingsCtrl($name, $apptStart); //creating an bookingsCtrl object for the data to be run through the cancelBooking() method
-    //running the object's cancelBooking() method to dekete the appointment from the database.
+    //running the object's cancelBooking() method to delete the appointment from the database.
     $cancellation->cancelBooking();

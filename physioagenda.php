@@ -17,14 +17,14 @@
   
 
   <h2>Your schedule for today: </h2>
-  <div id="slots-container"></div>
+  <div id="slots-container"></div> <!-- a div is prepared to contain each of the bookings loops throughout in the bookings.forEach() method. -->
 
   <script>
     //running the bookings.inc.php api to return the bookings from the database as an array of JSON string
     fetch('./includes/bookings.inc.php')
       .then(r => r.json()) //takes the returned data and parses it into a JS array of strings
       .then(bookings => { //bookings is now the array of strings
-        const bookingMap = new Map(); //make the array into a map object (this is supposedly useful for doing quick checks by using the .has() method)
+        const bookingMap = new Map(); //make the array into a map object (this allows the correct appt_start value to be mapped to the correct name). Very useful later one when displaying times and name on buttons.
 
         bookings.forEach(b => {
           bookingMap.set(b.appt_start, b.name);

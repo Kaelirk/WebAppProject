@@ -9,7 +9,7 @@ class BookingsCtrl extends Bookings {
         $this->name = $name;
         $this->apptStart = $apptStart;
     }
-
+    //the method checks if there were any inputs missing. If nothing is missing, it runs the deleteBooking() function.
     public function cancelBooking() {
          //runs the emptyInputCheck() method from the BookingsCtrl class below.
         if ($this->emptyInputCheck() == true){
@@ -20,10 +20,10 @@ class BookingsCtrl extends Bookings {
         //if we get to this stage, the deleteBooking() from the model will run and delete the specified row from the table.
         $this->deleteBooking($this->name, $this->apptStart);
     }
-
+    //this is how the cancelBooking() method checks for missing inputs.
     private function emptyInputCheck() {
         $result = false;
-        if(empty($this->name) || empty($this->apptStart)) {
+        if(empty($this->name) || empty($this->apptStart)) { //if either of this is missing, return true. This result causes the canceBooking() method to exit.
             $result = true;
             echo $this->name, $this->apptStart;
         } else {
