@@ -34,7 +34,7 @@
             <input class="rounded mb-1" type="password" name="pwdrepeat" placeholder="Repeat Password"><br>
             <input class="rounded mb-1" type="text" name="email" placeholder="E-mail"><br>
             <label class="rounded mb-1" for="pro">I am a health care professional: </label>
-            <input class="rounded mb-1" type="checkbox" name="pro" value="1"><br>
+            <input class="rounded mb-1" type="checkbox" id="pro" name="pro" value="1"><br>
            <button class="rounded mb-1" type="submit" name="submit">SIGN UP</button>
        </form>
      </div>
