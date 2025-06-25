@@ -44,7 +44,7 @@
           if(isset($_SESSION["userid"])){
         ?>
         <li class="nav-item"><a href="profile.php"><img src="images/person-lines-fill.svg" alt="Bootstrap" width="24" height="24"><?php echo $_SESSION["useruid"];?></a></li> 
-        <li class="nav-item"><a href="includes/logout.inc.php" class="header-login-a"><button type="button" class="btn btn-primary btn-sm">LOGOUT</button></a></li>
+        <li class="nav-item"><a href="api/logout.api.php" class="header-login-a"><button type="button" class="btn btn-primary btn-sm">LOGOUT</button></a></li>
         <?php
           }
         ?>

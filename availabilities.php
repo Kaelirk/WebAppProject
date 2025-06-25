@@ -20,8 +20,8 @@
   <div id="slots-container"></div>
 
   <script>
-    //running the taken.inc.php to return the taken slots from the database as an array of JSON string
-    fetch('./includes/taken.inc.php')
+    //running the taken.api.php to return the taken slots from the database as an array of JSON string
+    fetch('./api/taken.api.php')
       .then(r => r.json()) //takes the returned data and parses it into a JS array of strings
       .then(takenSlots => { //takenSlots is now the array of strings
         const taken = new Set(takenSlots); //make the array into a set object (this is supposedly useful for doing quick checks by using the .has() method)
@@ -60,11 +60,11 @@
     function bookSlot(slotStr) {
       if (!confirm(`Book the slot at ${slotStr}?`)) return;
       //send the booking request to the server and book if possible.
-      fetch('./includes/book.inc.php', {
+      fetch('./api/book.api.php', {
         method: 'POST',
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({appt_start: slotStr})
-      }) //sent a JSON string containing the appt_start information to the book.inc file.
+      }) //sent a JSON string containing the appt_start information to the book.api file.
       .then(() => {
       //redirect the user to their appointement list
       window.location.href = '../patientapptlist.php?error=none';

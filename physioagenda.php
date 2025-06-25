@@ -20,8 +20,8 @@
   <div id="slots-container"></div> <!-- a div is prepared to contain each of the bookings loops throughout in the bookings.forEach() method. -->
 
   <script>
-    //running the bookings.inc.php api to return the bookings from the database as an array of JSON string
-    fetch('./includes/bookings.inc.php')
+    //running the bookings.api.php api to return the bookings from the database as an array of JSON string
+    fetch('./api/bookings.api.php')
       .then(r => r.json()) //takes the returned data and parses it into a JS array of strings
       .then(bookings => { //bookings is now the array of strings
         const bookingMap = new Map(); //make the array into a map object (this allows the correct appt_start value to be mapped to the correct name). Very useful later one when displaying times and name on buttons.
@@ -69,11 +69,11 @@
       if (!confirm(`Cancel the booking at ${slotStr} for ${name}?`)) return;
 
       //send the cancel request to the server and cancel if possible.
-      fetch('./includes/cancel.inc.php', {
+      fetch('./api/cancel.api.php', {
         method: 'POST',
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({appt_start: slotStr, name: name})
-      }) //sent a JSON string containing the appt_start information to the cancel.inc.php file.
+      }) //sent a JSON string containing the appt_start information to the cancel.api.php file.
       .then(() => {
       window.location.reload();//reloads the page to hopefully show the change in the agenda.
       })

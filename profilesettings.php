@@ -15,7 +15,7 @@
             <div class="profile-setings">
                 <h3>PROFILE SETTINGS</h3>
                 <!-- the code below is a form that user's can fill in and save to the database to update the information on their profile page. -->
-                <form action="includes/profileinfo.inc.php" method="post">
+                <form action="api/profileinfo.api.php" method="post">
                     <input type="text" name="introtitle" placeholder="Profile title..." value="<?php $profileInfo->fetchIntroTitle($_SESSION["userid"]);?>">
                     <br>
                     <p>Update your profile page intro here: </p>

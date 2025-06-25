@@ -28,7 +28,7 @@
       <div class="index-login-signup">
         <h4>SIGN UP</h4>
         <p>Don't have an account with us yet?</p>
-        <form action="includes/signup.inc.php" method="post">
+        <form action="api/signup.api.php" method="post">
             <input id="signup" class="rounded mb-1" type="text" name="uid" placeholder="Name"><br>
             <input class="rounded mb-1" type="password" name="pwd" placeholder="Password"><br>
             <input class="rounded mb-1" type="password" name="pwdrepeat" placeholder="Repeat Password"><br>
@@ -42,7 +42,7 @@
         <br><br>
        <h4>LOGIN</h4>
        <p>Already have an account? Login here!</p>
-        <form action="includes/login.inc.php" method="post">
+        <form action="api/login.api.php" method="post">
          <input id="login" class="rounded mb-1" type="text" name="uid" placeholder="Username"><br>
          <input class="rounded mb-1" type="password" name="pwd" placeholder="Password"><br>
          <button class="rounded mb-1" type="submit" name="submit">LOGIN</button>
