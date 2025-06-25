@@ -75,7 +75,6 @@
         body: JSON.stringify({appt_start: slotStr, name: name})
       }) //sent a JSON string containing the appt_start information to the cancel.inc.php file.
       .then(() => {
-      //redirect the user to their appointement list
       window.location.reload();//reloads the page to hopefully show the change in the agenda.
       })
     }
