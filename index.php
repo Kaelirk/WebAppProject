@@ -16,7 +16,13 @@
 </head>
 <!-- this page contains the HTML and Boostrap layout/design for the index page. It includes the header.php file via the include_once expression-->
 <body class="bg-secondary-subtle">
-<section class="index-login d-flex justify-content-center align-items-center min-vh-100">
+  <section class="index-welcome d-flex flex-column justify-content-center align-items-center text-center">
+    <br><br><br><br>
+    <h2>Welcome to AgendaCare!</h2>
+    <p>Please Sign-up or login below.</p>
+    <br><br><br>
+  </section>
+<section class="index-login d-flex justify-content-center align-items-start min-vh-100">
   <div class="index-login-bg bg-secondary d-inline-flex p-3 rounded-5">
     <div class="wrapper d-flex flex-column justify-content-center align-items-center">
       <div class="index-login-signup">
