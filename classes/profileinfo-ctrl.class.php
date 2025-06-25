@@ -13,7 +13,7 @@ class ProfileInfoCtrl extends ProfileInfo {
     public function defaultProfileInfo(){
         $profileAbout = "Phone: +352 --- --- --- Email: --- @ ------.com CNS number:";
         $profileTitle = $this->userUid . "'s comments. " ;
-        $profileText = "Tell people about yourself! Who are you? Anything you think we should know?";
+        $profileText = "Tell us about yourself! Who are you? Anything you think we should know?";
         $this->setProfileInfo($profileAbout, $profileTitle, $profileText, $this->userId);
     }
 
