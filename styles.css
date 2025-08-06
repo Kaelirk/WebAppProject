@@ -1,0 +1,31 @@
+.bg-image-index {
+    background-image: url('images/index.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.bg-image-schedule {
+    background-image: url('images/schedule.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.bg-image-profile {
+    background-image: url('images/profile.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.bg-image-insurance {
+    background-image: url('images/insurance.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}

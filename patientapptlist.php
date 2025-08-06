@@ -8,10 +8,10 @@
   $apptsInfo = new ApptsView(); //instantiating an object to allow access to it's methods when loading in profile information.
   ?>
 
-<body class="bg-secondary-subtle">
+<body class="bg-image-schedule">
 <?php if(isset($_SESSION["userid"])){?>
 <section class="availabilities d-flex justify-content-center align-items-center min-vh-100">
-  <div class="availabilities-bg bg-secondary d-inline-flex p-3 rounded-5">
+  <div class="availabilities-bg bg-secondary bg-opacity-50 d-inline-flex p-3 rounded-5">
     <div class="wrapper d-flex flex-column justify-content-center align-items-center">
       <div class="availabilites-table"></div>
 

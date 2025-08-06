@@ -3,7 +3,7 @@
   
   ?>
 
-<body class="bg-secondary-subtle">
+<body class="bg-image-insurance">
 <?php if(isset($_SESSION["userid"])){?>
 <section class="invoices d-flex flex-column justify-content-center align-items-center min-vh-100">
     <a href="https://cns.public.lu/de/assure/remboursements.html"><img src="/images/cns-logo.png" alt="Logo" width="468" height="468"></a>
