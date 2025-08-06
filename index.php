@@ -26,17 +26,16 @@
 <!-- this page contains the HTML and Boostrap layout/design for the index page. It includes the header.php file via the include_once expression-->
 <body class="bg-image-index">
   <section class="index-welcome m-5 d-flex justify-content-center align-items-center">
-    <div class="index-login-bg bg-light bg-opacity-50 d-inline-flex p-3 rounded-5">
+    <div class="index-login-bg bg-light bg-opacity-50 d-inline-flex p-3 rounded-5 shadow-lg">
       <div class="wrapper d-flex flex-column justify-content-center align-items-center">
-        <br><br>
+        <br>
         <h2>Welcome to AgendaCare!</h2>
         <p>Please Sign-up or login below.</p>
-        <br>
       </div>
     </div>
   </section>
   <section class="index-login m-5 d-flex justify-content-center align-items-center">
-    <div class="index-login-bg bg-light bg-opacity-50 d-inline-flex p-3 rounded-5">
+    <div class="index-login-bg bg-light bg-opacity-50 d-inline-flex p-3 rounded-5 shadow-lg">
       <div class="wrapper d-flex flex-column justify-content-center align-items-start">
         <div class="index-login-signup">
           <h4>SIGN UP</h4>
@@ -50,7 +49,7 @@
             <label class="rounded mb-1" for="pro">I am a health care professional: </label>
             <input class="rounded mb-1" type="checkbox" id="pro" name="pro" value="1"><br>
             <?php } ?>
-            <button class="rounded mb-1" type="submit" name="submit">SIGN UP</button>
+            <button class="btn btn-sm  btn-light rounded mb-1 " type="submit" name="submit">SIGN UP</button>
           </form>
         </div>
         <div class="index-login-login">
@@ -60,7 +59,7 @@
           <form action="api/login.api.php" method="post">
             <input id="login" class="rounded mb-1" type="text" name="uid" placeholder="Username"><br>
             <input class="rounded mb-1" type="password" name="pwd" placeholder="Password"><br>
-            <button class="rounded mb-1" type="submit" name="submit">LOGIN</button>
+            <button class="btn btn-sm  btn-light rounded mb-1" type="submit" name="submit">LOGIN</button>
           </form>
         </div>
       </div>

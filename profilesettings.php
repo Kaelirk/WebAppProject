@@ -12,8 +12,8 @@
 <body class="bg-image-profile">
 <?php if(isset($_SESSION["userid"])){?>
  <section class="profile" >
-    <div class="wrapper d-flex justify-content-center" >
-        <div class="profile-bg bg-secondary bg-opacity-75 m-5 p-3 rounded-4" style="width: 600px">
+    <div class="wrapper d-flex justify-content-center " >
+        <div class="profile-bg bg-secondary bg-opacity-75 m-5 p-3 rounded-4 shadow-lg" style="width: 600px">
             <div class="profile-setings">
                 <h3>PROFILE SETTINGS</h3>
                 <!-- the code below is a form that user's can fill in and save to the database to update the information on their profile page. -->

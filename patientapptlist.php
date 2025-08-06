@@ -11,11 +11,12 @@
 <body class="bg-image-schedule">
 <?php if(isset($_SESSION["userid"])){?>
 <section class="availabilities d-flex justify-content-center align-items-center min-vh-100">
-  <div class="availabilities-bg bg-secondary bg-opacity-50 d-inline-flex p-3 rounded-5">
+  <div class="availabilities-bg bg-secondary bg-opacity-50 d-inline-flex p-3 rounded-5 shadow-lg">
     <div class="wrapper d-flex flex-column justify-content-center align-items-center">
       <div class="availabilites-table"></div>
 
       <h2>Your appointments: </h2>
+      <br>
       <?php
       $apptsInfo->showAppts($_SESSION["userid"]);
       ?>

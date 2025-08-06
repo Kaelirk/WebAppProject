@@ -8,7 +8,7 @@ class ApptsView extends Appts {
             echo '<h4>'.$userId['appt_start'].'</h4>';
             echo '<p>'.$userId['name']. ' with Stephen Ferns'. '</p>';
             echo 'Requested on: ' .$userId['created_at'];
-            echo '<hr>';
+            echo '<hr size="10" width="300px;" color="black">';
         }
     }
 

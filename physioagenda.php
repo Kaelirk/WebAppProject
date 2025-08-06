@@ -13,7 +13,7 @@
 <body class="bg-image-schedule">
 <?php if((isset($_SESSION["userid"])) && ($_SESSION["userid"] == "1")){?>
 <section class="bookings d-flex justify-content-center align-items-center vh-100">
-  <div class="bookings-bg bg-secondary bg-opacity-25 d-inline-flex p-4 rounded-5">
+  <div class="bookings-bg bg-secondary bg-opacity-25 d-inline-flex p-4 rounded-5 shadow-lg">
     <div class="wrapper d-flex flex-column justify-content-center align-items-center">
       <h2>Your schedule for today: </h2>
       <div id="slots-container"></div> <!-- a div is prepared to contain each of the bookings loops throughout in the bookings.forEach() method. -->

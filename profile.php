@@ -13,9 +13,9 @@
 <body class="bg-image-profile">
 <?php if(isset($_SESSION["userid"])){?>
 <section class="profile">
-  <div class="profile-bg bg-light bg-opacity-25 m-5 d-inline-flex p-3 rounded-5">
+  <div class="profile-bg bg-light bg-opacity-25 m-5 d-inline-flex p-3 rounded-5 shadow-lg">
     <div class="wrapper row align-items-stretch mx-2">
-      <div class="profile-info bg-secondary bg-opacity-75 d-inline-flex p-3 col rounded-5 m-2">
+      <div class="profile-info bg-secondary bg-opacity-75 d-inline-flex p-3 col rounded-5 m-2 shadow">
         <div class="profile-info-uid me-3">
           <h3> <!-- the code below displays the current session's useruid on the page -->
             <?php
@@ -33,7 +33,7 @@
           </p>
         </div>
       </div>
-        <div class="profile-content bg-secondary bg-opacity-75 d-inline-flex p-3 col rounded-5 m-2">
+        <div class="profile-content bg-secondary bg-opacity-75 d-inline-flex p-3 col rounded-5 m-2 shadow">
           <div class="profile-intro">
             <h3> <!-- The code below uses the fetchIntroTitle function set in the profileinfo-view.class file to return the user's Introtile data from the database -->
               <?php 
@@ -47,7 +47,7 @@
             </p>
           </div>
         </div>
-        <div class="profile-posts bg-secondary bg-opacity-75 d-inline-flex p-3 col rounded-5 m-2">
+        <div class="profile-posts bg-secondary bg-opacity-75 d-inline-flex p-3 col rounded-5 m-2 shadow">
           <div class="profile-post"> <!-- this segment of the page could perhaps contain the clinic's/physio's most recent twitter posts using a twitter API for example-->
             <h3>Stay up to date: </h3>
             <p>(This segment would normally contain the twitter feed of the clinic using the twitter API, it could also contain information regarding CNS reimbursement changes etc.)</p>

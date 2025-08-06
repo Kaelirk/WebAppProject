@@ -18,11 +18,11 @@
 <!-- Bootstrap was chosen as it provides easy to use style classes that can be integrated straight into the HTML -->
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <div class="container-fluid">
-    <div class="navbar-header col-4">
+    <div class="navbar-header col-2">
       <img src="/images/hospital.png"  alt="Logo" width="48" height="48">
       <a class="navbar-brand" href="profile.php">AgendaCare</a>
     </div>
-    <div class="navbar-header col-4">
+    <div class="navbar-header col-8">
       <ul class="navbar-nav justify-content-center">
         <!-- the home button on the navbar loads the login page when no session is active and loads the profile page when a session is active -->
         <li class="active nav-item"><a class="nav-link" <?php if(isset($_SESSION["userid"])){
@@ -41,7 +41,7 @@
         <li class="nav-item"><a class="nav-link" href="Invoices.php">Invoices & Payments</a></li> <!-- this page is pretty much just here to populate the navbar -->
       </ul>
     </div>
-    <div class="navbar-header col-4">
+    <div class="navbar-header col-2">
       <ul class="nav flex-column align-items-end"> 
         <!-- The code below checks if the session global variable called "userid" is set, in which case it will load the useruid and a logout button.-->
         <?php
