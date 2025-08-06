@@ -1,3 +1,9 @@
+<?php
+  include "classes/dbh.class.php";
+  include "classes/adminchecker.class.php";
+  $adminCheck = new AdminChecker();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +15,7 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <img src="/images/hospital.png" alt="Logo" width="48" height="48">
-      <a class="navbar-brand" href="#">AgendaCare</a>
+      <a class="navbar-brand" href="#" onclick="location.reload(); return false;">AgendaCare</a>
     </div>
   </div>
 </nav>
@@ -33,8 +39,10 @@
             <input class="rounded mb-1" type="password" name="pwd" placeholder="Password"><br>
             <input class="rounded mb-1" type="password" name="pwdrepeat" placeholder="Repeat Password"><br>
             <input class="rounded mb-1" type="text" name="email" placeholder="E-mail"><br>
+            <?php if ($adminCheck != true){ ?>
             <label class="rounded mb-1" for="pro">I am a health care professional: </label>
             <input class="rounded mb-1" type="checkbox" id="pro" name="pro" value="1"><br>
+            <?php } ?>
            <button class="rounded mb-1" type="submit" name="submit">SIGN UP</button>
        </form>
      </div>

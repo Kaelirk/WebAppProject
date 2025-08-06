@@ -13,18 +13,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 <!-- Bootstrap was chosen as it provides easy to use style classes that can be integrated straight into the HTML -->
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <div class="container-fluid">
     <div class="navbar-header">
-      <img src="/images/hospital.png" alt="Logo" width="48" height="48">
-      <a class="navbar-brand" href="#">AgendaCare</a>
+      <img src="/images/hospital.png"  alt="Logo" width="48" height="48">
+      <a class="navbar-brand" href="profile.php">AgendaCare</a>
     </div>
     <div class="navbar-header">
       <ul class="navbar-nav">
         <!-- the home button on the navbar loads the login page when no session is active and loads the profile page when a session is active -->
         <li class="active nav-item"><a class="nav-link" <?php if(isset($_SESSION["userid"])){
         ?>href="profile.php"<?php }else{?> href="index.php"<?php }?>>Home</a></li> 
+
+        <?php if(isset($_SESSION["userid"])){?>
         <?php /*the PHP placed here is aimed at changing the navbar based on who is logged in. A patient will see availabilies, their appointments and invoices.
         The administrator/physiotherapist will see their agenda.*/
           if($_SESSION["userid"] != "1"){
@@ -39,7 +42,7 @@
     </div>
     <div class="navbar-header">
       <ul class="nav flex-column"> 
-        <!-- The code below checks if the session global variable called "userid" is set, in which case it will load the useruid and a logout button. Otherwise it loads login/signup buttons -->
+        <!-- The code below checks if the session global variable called "userid" is set, in which case it will load the useruid and a logout button.-->
         <?php
           if(isset($_SESSION["userid"])){
         ?>
@@ -48,6 +51,7 @@
         <?php
           }
         ?>
+        <?php } ?>
       </ul>
     </div> 
   </div>

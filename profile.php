@@ -7,9 +7,11 @@
 
   $profileInfo = new ProfileInfoView(); //instantiating an object to allow access to it's methods when loading in profile information.
   ?>
+
 <!-- This page contains the HTML and bootstrap layout/design for the profile page. It includes the header via the include_once expression
  and includes access to a number of classes via the include expression -->
 <body class="bg-secondary-subtle">
+<?php if(isset($_SESSION["userid"])){?>
 <section class="profile">
   <div class="profile-bg bg-secondary mt-2 d-inline-flex p-3 rounded-5">
     <div class="wrapper row align-items-start gap-3">
@@ -58,4 +60,8 @@
   </div>
 </section>
 </body>
+<?php }else{ ?>
+    <h2>Access denied.<h2>
+    <p>Please return to the home page and login.</p>
+  <?php } ?>
 </html>

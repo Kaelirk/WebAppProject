@@ -11,6 +11,7 @@
   </style>
 
 <body class="bg-secondary-subtle">
+<?php if((isset($_SESSION["userid"])) && ($_SESSION["userid"] == "1")){?>
 <section class="bookings d-flex justify-content-center align-items-center min-vh-100">
   <div class="bookings-bg bg-secondary d-inline-flex p-3 rounded-5">
     <div class="wrapper d-flex flex-column justify-content-center align-items-center">
@@ -20,7 +21,7 @@
   <div id="slots-container"></div> <!-- a div is prepared to contain each of the bookings loops throughout in the bookings.forEach() method. -->
 
   <script>
-    //running the bookings.api.php api to return the bookings from the database as an array of JSON string
+    //running the bookings.api.php api to return the bookings from the database as an array of JSON strings
     fetch('./api/bookings.api.php')
       .then(r => r.json()) //takes the returned data and parses it into a JS array of strings
       .then(bookings => { //bookings is now the array of strings
@@ -79,6 +80,9 @@
       })
     }
   </script>
-  
+  <?php }else{ ?>
+    <h2>Access denied.<h2>
+    <p>Administrator privileges required.</p>
+  <?php } ?>
 </body>
 </html>

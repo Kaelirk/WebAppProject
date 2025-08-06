@@ -9,6 +9,7 @@
   ?>
 
 <body class="bg-secondary-subtle">
+<?php if(isset($_SESSION["userid"])){?>
 <section class="availabilities d-flex justify-content-center align-items-center min-vh-100">
   <div class="availabilities-bg bg-secondary d-inline-flex p-3 rounded-5">
     <div class="wrapper d-flex flex-column justify-content-center align-items-center">
@@ -19,3 +20,12 @@
       $apptsInfo->showAppts($_SESSION["userid"]);
       ?>
       <p>Make sure you arrive 5 minutes early!</p>
+
+    </div>
+  </div>
+</section>
+<?php }else{ ?>
+    <h2>Access denied.<h2>
+    <p>Please return to the home page and login.</p>
+  <?php } ?>
+</body>

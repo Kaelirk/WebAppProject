@@ -7,8 +7,10 @@
 
   $profileInfo = new ProfileInfoView();
   ?>
+
 <!-- This page contains the html and bootstrap layout/design for the profilesettings page of the application -->
 <body class="bg-secondary-subtle">
+<?php if(isset($_SESSION["userid"])){?>
  <section class="profile" >
     <div class="wrapper d-flex justify-content-center" >
         <div class="profile-bg bg-secondary mt-2 p-3 rounded-4" style="width: 600px">
@@ -31,4 +33,8 @@
     </div>
  </section>
 </body>
+<?php }else{ ?>
+    <h2>Access denied.<h2>
+    <p>Please return to the home page and login.</p>
+  <?php } ?>
 </html>
