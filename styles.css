@@ -29,3 +29,57 @@
     background-position: center center;
     background-attachment: fixed;
 }
+
+.slot { 
+    padding: 0.5em 1em; 
+    margin: 0.25em; 
+    border: 2px solid #888; 
+    border-radius: 10px; width: 200px; 
+    text-align: center; 
+    white-space: nowrap;
+    cursor: pointer;
+ }
+
+.taken { 
+    background: #f0f0f0; 
+    color: #999; 
+   cursor: not-allowed; 
+}
+
+.takenp { 
+    background:#20A0D8; 
+    color: #262626ff; 
+    cursor: pointer ; 
+}
+
+.free:hover { 
+    background: #eef; 
+}
+
+@media (max-width:600px) {
+    .slot {
+    width: 150px
+  }
+ }
+
+ .insurance {
+    width: 468px;
+    height: 468px;
+ }
+
+ @media (max-width:600px) {
+    .insurance{
+    width: 320px;
+    height: 320px;
+  }
+ }
+
+.profilesettings {
+    width: 600px;
+}
+
+@media (max-width:600px){
+    .profilesettings{
+        width: 320px;
+    }
+}

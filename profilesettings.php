@@ -1,4 +1,5 @@
 <?php
+$bodyClass = "bg-image-profile";
   include_once "header.php";
 
   include "classes/dbh.class.php";
@@ -9,22 +10,30 @@
   ?>
 
 <!-- This page contains the html and bootstrap layout/design for the profilesettings page of the application -->
-<body class="bg-image-profile">
 <?php if(isset($_SESSION["userid"])){?>
- <section class="profile" >
+ <section class="profile d-flex justify-content-center" >
     <div class="wrapper d-flex justify-content-center " >
-        <div class="profile-bg bg-secondary bg-opacity-75 m-5 p-3 rounded-4 shadow-lg" style="width: 600px">
+        <div class="profile-bg bg-secondary bg-opacity-75 m-5 p-3 rounded-3 shadow-lg" id="profilesettings">
             <div class="profile-setings">
                 <h3>PROFILE SETTINGS</h3>
                 <!-- the code below is a form that user's can fill in and save to the database to update the information on their profile page. -->
                 <form action="api/profileinfo.api.php" method="post">
-                    <input class="rounded-1" type="text" name="introtitle" placeholder="Profile title..." value="<?php $profileInfo->fetchIntroTitle($_SESSION["userid"]);?>">
+                    <div class="form-floating">
+                        <input class="rounded-1 form-control" type="text" id="introtitle" name="introtitle" value="<?php $profileInfo->fetchIntroTitle($_SESSION["userid"]);?>">
+                        <label for="introtitle" class="form-label">Profile title</label>
+                    </div>
                     <br>
-                    <p>Update your profile page intro here: </p>
-                    <textarea class="rounded-1" name="introtext" rows="10" cols="74" placeholder="Update your profile introduction here..."><?php $profileInfo->fetchIntroText($_SESSION["userid"]);?></textarea>
+                    <p>Update your profile page introduction here: </p>
+                    <div class="form-floating">
+                        <textarea class="rounded-1 form-control"id="introtext" name="introtext" style="min-height: 100px;" rows="10" cols="74" ><?php $profileInfo->fetchIntroText($_SESSION["userid"]);?></textarea>
+                        <label for="intotext" class="form-label">Introduction</label>
+                    </div>
                     <br><br>
                     <p>Update your about section: </p>
-                    <textarea class="rounded-1" name="about" rows="10" cols="74" placeholder="Update your profile about section here..."><?php $profileInfo->fetchAbout($_SESSION["userid"]);?></textarea>
+                     <div class="form-floating">
+                        <textarea class="rounded-1 form-control" id="about" name="about" style="min-height: 150px;" rows="10" cols="74" ><?php $profileInfo->fetchAbout($_SESSION["userid"]);?></textarea>
+                        <label for="about" class="form-label">About you</label>
+                    </div>
                     <br>
                     <button class="rounded-1" type="submit" name="submit">SAVE</button>
                 </form>

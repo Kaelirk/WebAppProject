@@ -15,5 +15,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $login->loginUser();
 
     // Going back to front page
-    header("Location: ../profile.php?error=none");
+    header("Location: ../profile.php?error=none", true, 303);
+
 }
