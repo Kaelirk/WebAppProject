@@ -23,7 +23,7 @@
 
 ## Watch an example of the current application
 <a href="" target="_blank">
-<img src="https://lh3.googleusercontent.com/sW6Hiv2jEFB8PxelHZP7xdniLhzA-9S-aL1lzCEh7vwItXebTIDDJoGBakfhFC11BWT2atYFx1Dh_83Vz8uIdFoa0oEZw7ngQ2qt0ymYia7NfrEpjdEZ" alt="Watch example video" width="240" height="180" border="10" />
+<img src="https://img.freepik.com/premium-vector/youtube-play-button-logo-icon_628407-1685.jpg" alt="Watch example video" width="240" height="180" border="10" />
 </a>
 
 ## How to install the application on your own machine
