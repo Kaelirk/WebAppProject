@@ -23,7 +23,7 @@
 
 ## Watch an example of the current application
 <a href="" target="_blank">
-<img src="https://lh3.googleusercontent.com/QP9hJ2wj1TqRnPy-xZHgWH3sK4pQioveDMGK-CUSl4945zICnjxqr8Y7yWu0q1YOyuWWq0O-QLmtGCi8XhJqyeYn_oQY78KAbJH9c_Ngp_qtS_UDTHE" alt="Watch example video" width="240" height="180" border="10" />
+<img src="https://lh3.googleusercontent.com/sW6Hiv2jEFB8PxelHZP7xdniLhzA-9S-aL1lzCEh7vwItXebTIDDJoGBakfhFC11BWT2atYFx1Dh_83Vz8uIdFoa0oEZw7ngQ2qt0ymYia7NfrEpjdEZ" alt="Watch example video" width="240" height="180" border="10" />
 </a>
 
 ## How to install the application on your own machine
