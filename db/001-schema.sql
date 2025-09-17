@@ -1,3 +1,6 @@
+-- The file is the schema of the database applicable to this webapp. When running the install.bat file, docker compose will setup the app, database and tables.
+
+
 -- phpMyAdmin SQL Dump
 -- version 5.2.2
 -- https://www.phpmyadmin.net/
