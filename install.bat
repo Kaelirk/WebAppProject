@@ -14,7 +14,7 @@ set MARKER_FILE=%APP_DIR%\.installed
 
 REM Installing the docker containers for the application.
 echo  Installing the application...
-docker compose up -d
+docker compose up --build  -d
 
 echo  Installation complete!
 echo This app is now ready. Use start.bat and stop.bat to control it.

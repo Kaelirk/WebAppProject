@@ -3,6 +3,7 @@
   include "classes/adminchecker.class.php";
   //instantiating of an AdminChecker() object
   $adminCheck = new AdminChecker();
+  $adminExists = $adminCheck->checkAdmin();
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +47,7 @@
               <input class="rounded mb-1" type="password" name="pwd" placeholder="Password"><br>
               <input class="rounded mb-1" type="password" name="pwdrepeat" placeholder="Repeat Password"><br>
               <input class="rounded mb-1" type="text" name="email" placeholder="E-mail"><br>
-              <?php if ($adminCheck != true){ ?> <!-- this code determines whether an admin account exists or not. If there already is an admin account, it will remove the option to signup as an admin from the signup form. -->
+              <?php if (!$adminExists){ ?> <!-- this code determines whether an admin account exists or not. If there already is an admin account, it will remove the option to signup as an admin from the signup form. -->
               <label class="rounded mb-1" for="pro">I am a health care professional: </label>
               <input class="rounded mb-1" type="checkbox" id="pro" name="pro" value="1"><br>
               <?php } ?>

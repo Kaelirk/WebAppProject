@@ -32,8 +32,8 @@
 4. Download the zip file of the application from github. https://github.com/Kaelirk/WebAppProject/archive/refs/heads/main.zip 
 5. Extract the files from the zip file.
 6. Double click on the install.bat file ![alt text](images/install.png)
-7. Once installed, you can simply use the start.bat and stop.bat files to start and stop the application.
-8. To access the front page of the application, go to 
+7. Once installed, you can simply use the start.bat and stop.bat files to start and stop the application. ![alt text](images/startstop.png)
+8. To access the front page of the application, go to http://localhost/index.php
 
 *MacOS
 

@@ -45,7 +45,7 @@ class SignupCtrl extends Signup{
             header("Location: ../index.php?error=useralreadyexists");
             exit();
         }
-        //after running all the checks, the setUser() class from the sign.class file is used to insert the user into the database.
+        //after running all the checks, the setUser() class from the signup.class file is used to insert the user into the database.
         $this->setUser($this->uid, $this->pwd, $this->email, $this->pro);
     }
 /*The error handlers below aren't part of the signupUser() function because there is a chance the code might need to be reused again. 
