@@ -25,7 +25,7 @@
 
 * WINDOWS
 
-1.Download docker for windows desktop from: https://www.docker.com/products/docker-desktop/ 
+1. Download docker for windows desktop from: https://www.docker.com/products/docker-desktop/ 
 ![alt text](images/download.png)
 
 2. Install docker by double cliking the file you downloaded.
