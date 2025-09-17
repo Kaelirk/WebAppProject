@@ -27,12 +27,19 @@
 
 1.Download docker for windows desktop from: https://www.docker.com/products/docker-desktop/ 
 ![alt text](images/download.png)
+
 2. Install docker by double cliking the file you downloaded.
+   
 3. Run docker by double clicking on the desktop icon. (You can skip login if you don't have an account.)
-4. Download the zip file of the application from github. https://github.com/Kaelirk/WebAppProject/archive/refs/heads/main.zip 
+   
+4. Download the zip file of the application from github. https://github.com/Kaelirk/WebAppProject/archive/refs/heads/main.zip
+   
 5. Extract the files from the zip file.
+   
 6. Double click on the install.bat file ![alt text](images/install.png)
+   
 7. Once installed, you can simply use the start.bat and stop.bat files to start and stop the application. ![alt text](images/startstop.png)
+  
 8. To access the front page of the application, go to http://localhost/index.php
 
 *MacOS
