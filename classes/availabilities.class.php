@@ -3,17 +3,20 @@
 class Availabilities extends dbh {
 
     //the setAppt method() is only used to insert the appointment into the database. It's uses the Insert into command to create a new row in the database
-    protected function setAppt($name, $apptStart, $id) {
+    protected function setAppt($name, $apptStart, $id): bool {
         $stmt = $this->connect()->prepare('INSERT INTO appts (name, appt_start, users_id) VALUES (?, ?, ?);');
+        $response = $stmt->execute(array($name, $apptStart, $id));
         //check is statement exists/executes
-        if(!$stmt->execute(array($name, $apptStart, $id))) {
+        if(!$response) {
             $stmt = null;
             header("Location: ../availabilities.php?error=stmtfailed");
+
             exit();
         }
 
-        $stmt = null;
+        return $response;
     }
+
     // the checkSlot() method simply checks to see if an appointment already exist at the specified DATETIME.
     protected function checkSlot($apptStart) {
         $stmt = $this->connect()->prepare('SELECT appt_id FROM appts WHERE appt_start = ?;');
