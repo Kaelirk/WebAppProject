@@ -11,6 +11,7 @@ $bodyClass = "bg-image-profile";
 
 <!-- This page contains the HTML and bootstrap layout/design for the profile page. It includes the header via the include_once expression
  and includes access to a number of classes via the include expression -->
+ <!-- All instances of the "if(isset($_SESSION["userid"]))" line throughout the application are to ensure that parts of the page that should only be accessible to those who are logged in aren't loaded if no session is active.-->
 <?php if(isset($_SESSION["userid"])){?>
 <div class="container-xl">
   <section class="profile d-flex justify-content-center">

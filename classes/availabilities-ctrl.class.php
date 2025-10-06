@@ -13,19 +13,19 @@ class AvailabilitiesCtrl extends Availabilities {
     }
 
     public function createAppt(){
-        $apptWasSet = false;
+        $apptWasSet = false; //This attribute was assigned to this function so the unit tests in "AvailabilitiesClassTest.php" have a return value to check.
         //runs the emptyInputCheck() method from the AvailabilitiesCtrl class below.
         if ($this->emptyInputCheck() == true){
             header("Location: ../availabilities.php?error=emptyinput");
             return $apptWasSet;
         }
+        //runs the apptExists() method from below.
         if($this->apptExists() == false){
             header("Location: ../availabilities.php?error=apptalreadytaken");
 
             return $apptWasSet;
         }
-        
-        //if we get to this stage, take the data submitted by the user submitted via the availabilities.inc page and run the setAppt() method from profileinfo.class (which is a model class of the MVC model) to update the profile page information
+        //if we get to this stage, take the data submitted by the user submitted via the availabilities.inc page and run the setAppt() method from profileinfo.class (which is a model class of the MVC model) to update the profile page information)
         $this->setAppt($this->name, $this->apptStart, $this->id);
         $apptWasSet = true;
         return $apptWasSet;

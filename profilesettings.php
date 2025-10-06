@@ -10,6 +10,7 @@ $bodyClass = "bg-image-profile";
   ?>
 
 <!-- This page contains the html and bootstrap layout/design for the profilesettings page of the application -->
+ <!-- All instances of the "if(isset($_SESSION["userid"]))" line throughout the application are to ensure that parts of the page that should only be accessible to those who are logged in aren't loaded if no session is active.-->
 <?php if(isset($_SESSION["userid"])){?>
  <section class="profile d-flex justify-content-center" >
     <div class="wrapper d-flex justify-content-center " >

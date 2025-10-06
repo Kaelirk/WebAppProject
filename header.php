@@ -33,7 +33,7 @@
         <!-- the home button on the navbar loads the profile page when no session is active and loads the profile page when a session is active -->
         <li class="active nav-item"><a class="nav-link" <?php if(isset($_SESSION["userid"])){
         ?>href="profile.php"<?php }else{?> href="index.php"<?php }?>>Home</a></li> 
-
+        <!-- All instances of the "if(isset($_SESSION["userid"]))" line throughout the application are to ensure that parts of the page that should only be accessible to those who are logged in aren't loaded if no session is active.-->
         <?php if(isset($_SESSION["userid"])){?>
         <?php /*the PHP placed here is aimed at changing the navbar based on who is logged in. A patient will see availabilies, their appointments and invoices.
         The administrator/physiotherapist will see their agenda.*/

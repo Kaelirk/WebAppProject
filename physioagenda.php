@@ -4,8 +4,8 @@ $bodyClass="bg-image-schedule";
 
   require_once __DIR__ . '/classes/dbh.class.php';
   ?>
-
-<?php if((isset($_SESSION["userid"])) && ($_SESSION["userid"] == "1")){?>
+<!-- All instances of the "if(isset($_SESSION["userid"]))" line throughout the application are to ensure that parts of the page that should only be accessible to those who are logged in aren't loaded if no session is active.-->
+<?php if((isset($_SESSION["userid"])) && ($_SESSION["userid"] == "1")){?> <!-- this line of code also checks that the person accessing this page is userid "1" which would be the admin account. -->
 <section class="bookings d-flex justify-content-center align-items-center vh-100">
   <div class="bookings-bg bg-secondary bg-opacity-25 d-inline-flex p-4 rounded-3 shadow-lg">
     <div class="wrapper d-flex flex-column justify-content-start align-items-center overflow-auto" style="max-height: 80vh;"">

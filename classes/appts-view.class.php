@@ -2,6 +2,7 @@
 
 class ApptsView extends Appts {
 
+    //below is a function that checks for all appointments related to the $userId provided by the session and then echoes out the data.
     public function showAppts($userId) {
         $results = $this->getAppts($userId);
         foreach(array_reverse($results) as $userId){

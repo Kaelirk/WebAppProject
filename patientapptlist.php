@@ -8,7 +8,7 @@ $bodyClass = "bg-image-schedule";
 
   $apptsInfo = new ApptsView(); //instantiating an object to allow access to it's methods when loading in profile information.
   ?>
-
+<!-- All instances of the "if(isset($_SESSION["userid"]))" line throughout the application are to ensure that parts of the page that should only be accessible to those who are logged in aren't loaded if no session is active.-->
 <?php if(isset($_SESSION["userid"])){?>
 <section class="availabilities d-flex justify-content-center align-items-center min-vh-100">
   <div class="availabilities-bg bg-secondary bg-opacity-50 d-inline-flex p-3 rounded-3 shadow-lg overflow-y-scroll" style="max-height: 600px;">

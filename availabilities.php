@@ -9,7 +9,7 @@ $bodyClass = "bg-image-schedule";
   <div class="availabilities-bg bg-secondary bg-opacity-25 d-inline-flex p-4 rounded-5 shadow-lg">
     <div class="wrapper d-flex flex-column justify-content-start align-items-center overflow-auto" style="max-height: 80vh;">
       <h2 text-align-center >Today's availabilities: </h2>
-      <div id="slots-container"></div><!-- a div is prepared to contain each of the bookings loops throughout in the bookings.forEach() method. -->
+      <div id="slots-container"></div><!-- a div is prepared to contain each of the bookings loops throughout in the bookings.forEach() method contained in the patientscript.js file. -->
         <script src="patientscript.js"></script><!-- calling the script from patientscript.js -->
      </div>
    </div>
